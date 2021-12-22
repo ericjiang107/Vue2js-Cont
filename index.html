@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Vue JS 2 Cont</title>
+</head>
+<body>
+    <div id="v-for">
+        <h1> Looping through the list </h1>
+        index 0 of characters is: {{ characters[0] }}
+        <br>
+        index 1 of characters is: {{ characters[1] }}
+
+        <!-- easier way of looping is by using v-for -->
+        <ul>
+            <li v-for="name in characters"> 
+                {{ name }}
+            </li>
+        </ul>
+
+        <!-- to display everything in ninjas (everything inside is held within a dictionary) -->
+        <ul>
+            <li v-for="ninja in ninjas"> {{ ninja }} </li>
+        </ul>
+        <!-- to get each property within ninjas -->
+        <ul>
+            <!-- we can even get the index of each property by adding (, index) -->
+            <li v-for="(ninja, index) in ninjas"> 
+                {{ index }}) name: {{ ninja.name }} 
+                <br>
+                age: {{ ninja.age }}
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
