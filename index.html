@@ -35,6 +35,50 @@
             </li>
         </ul>
 
+        <!-- outputting a div from the v-for -->
+        <!-- if we don't want our div tags to show up in the inspect element page, we can change the div to template -->
+        <div v-for="(ninja, index) in ninjas">
+            <h3> {{ index }} . {{ ninja.name }} </h3>
+            <p> age: {{ ninja.age }} </p>
+        </div>
+
+        <!-- looping through objects -->
+        <template v-for="ninja in ninjas">
+            <!-- go through the object, we can use another v-for inside -->
+            <div v-for="(val, key) in ninja">
+                <!-- since we have access to the single object within the array, we can cycle through that object -->
+                {{ key }} - {{ val }}
+            </div>
+        </template>
+    </div>
+
+    <hr>
+
+    <div id="components1">
+        <h2>
+            Vue Component 1
+        </h2>
+        <!-- to add in the reusable component created that is called 'greeting' -->
+        <greeting></greeting>
+    </div>
+
+    <div id="components2">
+        <h2>
+            Vue Component 2
+        </h2>
+        <greeting></greeting>
+    </div>
+
+    <hr>
+
+    <div id="refs">
+        <h2> Refs </h2>
+        <input type="text" ref="input">    
+        <button v-on:click="readRefs"> Submit </button>
+        <p> your food: {{ output }} </p>
+        <div ref="test">
+            hello
+        </div>
     </div>
 
     <script src="app.js"></script>
